@@ -1,85 +1,97 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>حيدر نصيف</title>
-<meta name="description" content="حيدر نصيف: أعمالي وحساباتي في مكان واحد">
-<meta property="og:title" content="حيدر نصيف">
-<meta property="og:description" content="أعمالي وحساباتي في مكان واحد">
-<meta name="theme-color" content="#f3efe8">
+<title>Haider Nassef</title>
+<meta name="description" content="Haider Nassef: Full-Stack Developer, M.Sc. in Artificial Intelligence.">
+<meta property="og:title" content="Haider Nassef">
+<meta property="og:description" content="Full-Stack Developer · M.Sc. in Artificial Intelligence">
+<meta name="theme-color" content="#07080b">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=IBM+Plex+Sans+Arabic:wght@400;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-  :root{ --paper:#f3efe8; --card:#fbf9f5; --ink:#161514; --soft:#6f6a63; --line:#d9d2c6; }
+  :root{ --bg:#07080b; --card:#0f1117; --line:#1d212b; --text:#eef1f6; --soft:#8a93a6; --accent:#7aa2ff; --accent2:#b38cff; }
   *{box-sizing:border-box;margin:0;padding:0}
-  html,body{height:100%}
+  html,body{min-height:100%}
   body{
-    font-family:"IBM Plex Sans Arabic",system-ui,sans-serif; color:var(--ink);
-    background:var(--paper);
-    display:flex; align-items:center; justify-content:center; padding:56px 16px;
+    font-family:Inter,"IBM Plex Sans Arabic",system-ui,sans-serif; color:var(--text); background-color:var(--bg);
+    background-image:
+      radial-gradient(55% 35% at 50% 0%, rgba(122,162,255,.18), transparent 70%),
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:auto, 32px 32px, 32px 32px;
+    display:flex; justify-content:center; padding:64px 16px 40px;
   }
-  main{width:100%; max-width:400px; text-align:center; animation:in 1s cubic-bezier(.2,.7,.2,1) both}
-  @keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  main{width:100%;max-width:420px;text-align:center;animation:in .9s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes in{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-  .mono{width:84px;height:84px;margin:0 auto 26px;border-radius:50%;display:grid;place-items:center;
-        border:1px solid var(--ink);font-family:"Amiri",serif;font-size:42px;line-height:1;padding-bottom:6px}
-  h1{font-family:"Amiri",serif;font-weight:700;font-size:46px;line-height:1.2;letter-spacing:.5px}
-  .tag{color:var(--soft);font-size:15px;font-weight:300;margin-top:10px}
+  .avatar{width:92px;height:92px;margin:0 auto 22px;border-radius:50%;padding:2px;
+          background:conic-gradient(from 200deg,var(--accent),var(--accent2),var(--accent))}
+  .avatar div{width:100%;height:100%;border-radius:50%;background:var(--bg);display:grid;place-items:center;
+              font-weight:800;font-size:30px;letter-spacing:1px}
+  h1{font-weight:800;font-size:34px;letter-spacing:-.5px}
+  .ar{font-family:"IBM Plex Sans Arabic",sans-serif;color:var(--soft);font-size:15px;margin-top:4px}
+  .chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
+  .chip{font-size:12.5px;padding:7px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(15,17,23,.8);color:#cfd5e2}
+  .chip b{color:var(--accent);font-weight:600}
+  .line{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--soft);margin-top:18px}
+  .line span{color:var(--accent)}
 
-  .label{display:flex;align-items:center;gap:12px;margin:48px 0 16px;color:var(--soft);font-size:12px;letter-spacing:2px}
-  .label::before,.label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .label{font-size:11px;letter-spacing:3px;color:var(--soft);text-transform:uppercase;margin:44px 0 14px;text-align:left}
+  a.work{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;text-decoration:none;color:var(--text);
+         background:var(--card);border:1px solid var(--line);transition:border-color .2s,transform .2s,box-shadow .2s}
+  a.work:hover,a.work:focus-visible{border-color:var(--accent);transform:translateY(-2px);outline:none;
+         box-shadow:0 0 0 4px rgba(122,162,255,.08),0 20px 40px -24px rgba(122,162,255,.5)}
+  .icon{flex:0 0 50px;height:50px;border-radius:13px;display:grid;place-items:center;background:#0b211e;color:#d9b45c;
+        font-family:"IBM Plex Sans Arabic",sans-serif;font-weight:600;font-size:24px}
+  .txt{flex:1;text-align:left}
+  .txt b{display:block;font-size:16px;font-weight:600}
+  .txt b i{font-style:normal;font-family:"IBM Plex Sans Arabic",sans-serif;color:var(--soft);font-weight:400;margin-left:6px}
+  .txt span{display:block;font-size:13px;color:var(--soft);margin-top:2px}
+  .arrow{color:var(--soft);font-size:18px;transition:transform .2s,color .2s}
+  a.work:hover .arrow{transform:translateX(3px);color:var(--accent)}
 
-  a.work{display:flex;align-items:center;gap:16px;padding:18px;border-radius:18px;text-decoration:none;color:var(--ink);
-         background:var(--card);border:1px solid var(--line);transition:transform .25s,box-shadow .25s,border-color .25s}
-  a.work:hover,a.work:focus-visible{transform:translateY(-2px);border-color:var(--ink);outline:none;
-         box-shadow:0 18px 40px -24px rgba(22,21,20,.45)}
-  .icon{flex:0 0 54px;height:54px;border-radius:15px;display:grid;place-items:center;
-        background:#0b211e;color:#d9b45c;font-family:"Amiri",serif;font-weight:700;font-size:28px;padding-bottom:4px}
-  .txt{flex:1;text-align:right}
-  .txt b{display:block;font-family:"Amiri",serif;font-size:24px;font-weight:700;line-height:1.3}
-  .txt span{display:block;color:var(--soft);font-size:13px}
-  .arrow{font-size:22px;color:var(--soft);transition:transform .25s}
-  a.work:hover .arrow{transform:translateX(-4px);color:var(--ink)}
-
-  nav{display:flex;justify-content:center;gap:28px;margin-top:44px}
-  nav a{display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink);text-decoration:none;font-size:12px;
-        transition:opacity .2s}
-  nav a span{color:var(--soft)}
-  nav a:hover{opacity:.6}
-  nav .c{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--card)}
+  nav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px}
+  nav a{display:flex;flex-direction:column;align-items:center;gap:8px;padding:14px 6px;border-radius:14px;text-decoration:none;
+        color:var(--text);font-size:12px;background:var(--card);border:1px solid var(--line);transition:border-color .2s,color .2s}
+  nav a:hover,nav a:focus-visible{border-color:var(--accent);color:var(--accent);outline:none}
   nav svg{width:20px;height:20px}
-  footer{margin-top:48px;color:#a59e93;font-size:12px}
+  footer{margin-top:44px;color:#4b5263;font-size:12px}
   @media (prefers-reduced-motion:reduce){main{animation:none}}
 </style>
 </head>
 <body>
 <main>
-  <div class="mono">ح</div>
-  <h1>حيدر نصيف</h1>
-  <p class="tag">أبني أنظمة عربية تحلّ مشكلات حقيقية</p>
+  <div class="avatar"><div>HN</div></div>
+  <h1>Haider Nassef</h1>
+  <p class="ar">حيدر نصيف</p>
 
-  <div class="label">أعمالي</div>
+  <div class="chips">
+    <span class="chip"><b>Full-Stack</b> Developer</span>
+    <span class="chip"><b>M.Sc.</b> Artificial Intelligence</span>
+    <span class="chip"><b>System</b> Administrator</span>
+  </div>
+  <p class="line"><span>&gt;</span> Turning real problems into simple Arabic software.</p>
+
+  <div class="label">Work</div>
   <a class="work" href="https://prog-alone.github.io/khizana/">
     <div class="icon">خ</div>
-    <div class="txt"><b>خِزانة</b><span>تطبيق لإدارة أموالك الشخصية والعائلية</span></div>
-    <div class="arrow">←</div>
+    <div class="txt"><b>Khizana <i>خِزانة</i></b><span>Personal &amp; family money manager</span></div>
+    <div class="arrow">→</div>
   </a>
 
   <nav>
-    <a href="https://www.instagram.com/h.nj2/"><div class="c">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
-    </div><span>إنستغرام</span></a>
-    <a href="https://www.linkedin.com/in/hnj2/"><div class="c">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>
-    </div><span>لينكدإن</span></a>
-    <a href="mailto:haidernassef4@gmail.com"><div class="c">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-    </div><span>البريد</span></a>
+    <a href="https://www.linkedin.com/in/hnj2/">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.06c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.77 2.65 4.77 6.1V21h-4v-5.2c0-1.24-.02-2.84-1.73-2.84-1.73 0-2 1.35-2 2.75V21h-4z"/></svg>LinkedIn</a>
+    <a href="https://www.instagram.com/h.nj2/">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
+    <a href="mailto:haidernassef4@gmail.com">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
   </nav>
 
-  <footer>© حيدر نصيف</footer>
+  <footer>© Haider Nassef</footer>
 </main>
 </body>
 </html>
