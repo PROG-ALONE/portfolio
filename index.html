@@ -43,16 +43,24 @@
          font-size:11px;letter-spacing:5px;color:var(--turq)}
 
   .label{font-family:"Amiri",serif;color:var(--sand);font-size:20px;margin:18px 0 14px}
-  a.work{display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;text-decoration:none;color:var(--ivory);
-         background:var(--card);border:1px solid var(--line);transition:border-color .25s,transform .25s,box-shadow .25s}
-  a.work:hover,a.work:focus-visible{border-color:var(--turq);transform:translateY(-2px);outline:none;box-shadow:0 18px 40px -24px rgba(70,184,176,.6)}
+  details.work{border-radius:16px;background:var(--card);border:1px solid var(--line);transition:border-color .25s,box-shadow .25s;text-align:right;overflow:hidden}
+  details.work[open],details.work:hover{border-color:var(--turq);box-shadow:0 18px 40px -24px rgba(70,184,176,.6)}
+  details.work summary{list-style:none;display:flex;align-items:center;gap:14px;padding:16px;cursor:pointer}
+  details.work summary::-webkit-details-marker{display:none}
+  details.work summary:focus-visible{outline:2px solid var(--turq);outline-offset:-2px;border-radius:16px}
   .icon{flex:0 0 52px;height:52px;border-radius:14px;display:grid;place-items:center;background:#0b211e;color:#d9b45c;
         font-family:"Amiri",serif;font-weight:700;font-size:26px;padding-bottom:4px}
-  .txt{flex:1;text-align:right}
-  .txt b{display:block;font-family:"Amiri",serif;font-size:22px;font-weight:700;line-height:1.3}
-  .txt span{display:block;font-size:13px;color:var(--soft)}
-  .arrow{color:var(--soft);font-size:18px;transition:transform .25s,color .25s}
-  a.work:hover .arrow{transform:translateX(-3px);color:var(--turq)}
+  details.work summary b{flex:1;font-family:"Amiri",serif;font-size:24px;font-weight:700}
+  .plus{position:relative;width:18px;height:18px;flex:0 0 18px}
+  .plus::before,.plus::after{content:"";position:absolute;inset:8px 0 auto;height:2px;background:var(--turq);border-radius:2px;transition:transform .3s}
+  .plus::after{transform:rotate(90deg)}
+  details.work[open] .plus::after{transform:rotate(0)}
+  .more{padding:0 18px 18px;animation:reveal .4s ease both}
+  @keyframes reveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+  .more p{color:var(--soft);font-size:14px;line-height:1.9;border-top:1px solid var(--line);padding-top:14px}
+  .go{display:inline-block;margin-top:14px;padding:9px 22px;border-radius:999px;text-decoration:none;font-weight:600;font-size:14px;
+      color:var(--bg);background:var(--turq);transition:opacity .2s}
+  .go:hover{opacity:.85}
 
   nav{display:flex;justify-content:center;gap:14px;margin-top:26px}
   nav a{width:52px;height:52px;display:grid;place-items:center;color:var(--turq);text-decoration:none;
@@ -84,11 +92,17 @@
   </svg>
 
   <p class="label">أعمالي</p>
-  <a class="work" href="https://prog-alone.github.io/khizana/">
-    <div class="icon">خ</div>
-    <div class="txt"><b>خِزانة</b><span>تطبيق لإدارة أموالك الشخصية والعائلية</span></div>
-    <div class="arrow">←</div>
-  </a>
+  <details class="work">
+    <summary>
+      <div class="icon">خ</div>
+      <b>خِزانة</b>
+      <span class="plus" aria-hidden="true"></span>
+    </summary>
+    <div class="more">
+      <p>تطبيق لإدارة أموالك الشخصية والعائلية: محافظ وبطاقات، ميزانية، ادخار، جمعية، ديون، زكاة وصدقة، وتقارير.</p>
+      <a class="go" href="https://prog-alone.github.io/khizana/">ادخل التطبيق ←</a>
+    </div>
+  </details>
 
   <nav>
     <a href="https://www.linkedin.com/in/hnj2/" aria-label="لينكدإن">
