@@ -28,9 +28,10 @@
 
 
   .rosette{width:110px;height:92px;margin:0 auto 14px;display:block}
+  .hero{display:flex;flex-direction:column;align-items:center}
   .avatar{position:relative;width:132px;height:132px;margin:0 auto 16px;cursor:pointer;z-index:3;
-        transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-  .avatar:hover{transform:scale(1.32)}
+        transition:transform .55s cubic-bezier(.2,.7,.2,1)}
+  .hero:hover .avatar{transform:scale(1.5) translateY(18px)}
   .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
               border:2px solid var(--turq);box-shadow:0 14px 40px -16px rgba(70,184,176,.75)}
   .avatar::before{content:"";position:absolute;inset:-6px;border-radius:50%;padding:2px;
@@ -41,18 +42,24 @@
   .reveal{position:absolute;inset:0;border-radius:50%;display:grid;place-items:center;overflow:hidden;
     background:radial-gradient(circle at 50% 38%,rgba(22,41,74,.55),rgba(12,22,38,.9));
     opacity:0;transform:scale(.55);transition:opacity .5s,transform .5s;pointer-events:none}
-  .avatar:hover .reveal{opacity:1;transform:scale(1)}
+  .hero:hover .reveal{opacity:1;transform:scale(1)}
   .reveal svg{width:72%;height:72%;filter:drop-shadow(0 0 10px rgba(70,184,176,.5))}
+  .identity{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;
+            width:100%;min-height:76px}
   .name{font-family:"Amiri","Aref Ruqaa",serif;font-size:38px;font-weight:700;color:var(--ivory);
         line-height:1.3;margin:2px 0 4px;letter-spacing:1px;
         display:inline-block;background:linear-gradient(90deg,var(--ivory),var(--turq),var(--sand),var(--ivory));
         background-size:300% 100%;-webkit-background-clip:text;background-clip:text;
-        -webkit-text-fill-color:transparent;transition:filter .3s}
+        -webkit-text-fill-color:transparent;transition:filter .3s,opacity .5s,transform .5s}
   .name:hover{filter:drop-shadow(0 0 18px rgba(70,184,176,.55));animation:shine 1.4s linear infinite}
+  .hero:hover .name,.hero:hover .role{opacity:0;transform:translateY(-10px)}
+  .mosque{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:230px;height:96px;
+          color:var(--turq);opacity:0;transition:opacity .6s ease;pointer-events:none}
+  .hero:hover .mosque{opacity:.25}
   @keyframes shine{to{background-position:300% 0}}
   .role{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.5px;
         color:var(--turq);background:rgba(70,184,176,.1);border:1px solid var(--line);
-        padding:4px 16px;border-radius:999px}
+        padding:4px 16px;border-radius:999px;transition:opacity .5s,transform .5s}
   .label{font-family:"Amiri",serif;color:var(--sand);font-size:20px;margin:18px 0 16px}
   .works{display:flex;flex-direction:column;gap:11px}
   .card{
@@ -116,26 +123,48 @@
     </div>
   </details>
 
-  <div class="avatar">
-    <img src="hayder-avatar.gif" alt="حيدر نصيف" width="132" height="132"
-         onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 132 132%22%3E%3Crect width=%22132%22 height=%22132%22 fill=%22%2316294a%22/%3E%3Ctext x=%2266%22 y=%2286%22 font-size=%2256%22 text-anchor=%22middle%22 fill=%22%2346b8b0%22%3E%D8%AD%3C/text%3E%3C/svg%3E';">
-    <div class="reveal" aria-hidden="true">
-      <svg viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <g stroke="#46b8b0" stroke-width="2.6">
-          <path d="M34 92 V60 H86 V92"/>
-          <path d="M38 60 C38 40 60 34 60 22 C60 34 82 40 82 60"/>
-          <path d="M52 92 V78 C52 72 68 72 68 78 V92"/>
-          <path d="M14 92 V40 M24 92 V40 M14 40 L19 30 L24 40 M12 50 H26"/>
-          <path d="M96 92 V40 M106 92 V40 M96 40 L101 30 L106 40 M94 50 H108"/>
-          <path d="M8 92 H112"/>
-        </g>
-        <path d="M60 22 V16" stroke="#c9a96a" stroke-width="2.6"/>
-        <path d="M63.5 5.5 A5.5 5.5 0 1 0 63.5 14.5 A4.2 4.2 0 1 1 63.5 5.5 Z" fill="#c9a96a"/>
+  <div class="hero">
+    <div class="avatar">
+      <img src="hayder-avatar.gif" alt="حيدر نصيف" width="132" height="132"
+           onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 132 132%22%3E%3Crect width=%22132%22 height=%22132%22 fill=%22%2316294a%22/%3E%3Ctext x=%2266%22 y=%2286%22 font-size=%2256%22 text-anchor=%22middle%22 fill=%22%2346b8b0%22%3E%D8%AD%3C/text%3E%3C/svg%3E';">
+      <div class="reveal" aria-hidden="true">
+        <svg viewBox="0 0 120 100" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <g stroke="#46b8b0" stroke-width="2.6">
+            <path d="M34 92 V60 H86 V92"/>
+            <path d="M38 60 C38 40 60 34 60 22 C60 34 82 40 82 60"/>
+            <path d="M52 92 V78 C52 72 68 72 68 78 V92"/>
+            <path d="M14 92 V40 M24 92 V40 M14 40 L19 30 L24 40 M12 50 H26"/>
+            <path d="M96 92 V40 M106 92 V40 M96 40 L101 30 L106 40 M94 50 H108"/>
+            <path d="M8 92 H112"/>
+          </g>
+          <path d="M60 22 V16" stroke="#c9a96a" stroke-width="2.6"/>
+          <path d="M63.5 5.5 A5.5 5.5 0 1 0 63.5 14.5 A4.2 4.2 0 1 1 63.5 5.5 Z" fill="#c9a96a"/>
+        </svg>
+      </div>
+    </div>
+    <div class="identity">
+      <svg class="mosque" viewBox="0 0 240 100" fill="currentColor" aria-hidden="true">
+        <!-- قبة مركزية -->
+        <path d="M120 18c-3 12-14 20-14 34 0 10 6 18 14 18s14-8 14-18c0-14-11-22-14-34z"/>
+        <rect x="117" y="8" width="6" height="12" rx="3"/>
+        <circle cx="120" cy="6" r="4"/>
+        <!-- قباب جانبية -->
+        <path d="M78 40c-2 8-9 13-9 22 0 7 4 12 9 12s9-5 9-12c0-9-7-14-9-22z"/>
+        <path d="M162 40c-2 8-9 13-9 22 0 7 4 12 9 12s9-5 9-12c0-9-7-14-9-22z"/>
+        <!-- مئذنتان -->
+        <rect x="34" y="30" width="9" height="52" rx="2"/>
+        <path d="M38.5 16l4.5 14h-9z"/>
+        <rect x="197" y="30" width="9" height="52" rx="2"/>
+        <path d="M201.5 16l4.5 14h-9z"/>
+        <!-- جسم المسجد -->
+        <path d="M52 82h136v14H52z"/>
+        <!-- مدخل -->
+        <path d="M110 96V78c0-6 4-10 10-10s10 4 10 10v18z" fill="#0c1626" opacity=".55"/>
       </svg>
+      <h1 class="name">حيدر نصيف</h1>
+      <span class="role">طالب علم</span>
     </div>
   </div>
-  <h1 class="name">حيدر نصيف</h1>
-  <span class="role">طالب علم</span>
 
   <p class="label">أعمالي</p>
 
