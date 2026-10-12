@@ -53,9 +53,9 @@
         -webkit-text-fill-color:transparent;transition:filter .3s,opacity .5s,transform .5s}
   .name:hover{filter:drop-shadow(0 0 18px rgba(70,184,176,.55));animation:shine 1.4s linear infinite}
   .hero:hover .name,.hero:hover .role{opacity:0;transform:translateY(-10px)}
-  .mosque{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:230px;height:96px;
-          color:var(--turq);opacity:0;transition:opacity .6s ease;pointer-events:none}
-  .hero:hover .mosque{opacity:.25}
+  .mosque{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84%;
+          color:var(--turq);opacity:0;transition:opacity .6s ease;pointer-events:none;z-index:2}
+  .avatar:hover .mosque{opacity:.2}
   @keyframes shine{to{background-position:300% 0}}
   .role{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.5px;
         color:var(--turq);background:rgba(70,184,176,.1);border:1px solid var(--line);
@@ -141,8 +141,6 @@
           <path d="M63.5 5.5 A5.5 5.5 0 1 0 63.5 14.5 A4.2 4.2 0 1 1 63.5 5.5 Z" fill="#c9a96a"/>
         </svg>
       </div>
-    </div>
-    <div class="identity">
       <svg class="mosque" viewBox="0 0 240 100" fill="currentColor" aria-hidden="true">
         <!-- قبة مركزية -->
         <path d="M120 18c-3 12-14 20-14 34 0 10 6 18 14 18s14-8 14-18c0-14-11-22-14-34z"/>
@@ -161,6 +159,8 @@
         <!-- مدخل -->
         <path d="M110 96V78c0-6 4-10 10-10s10 4 10 10v18z" fill="#0c1626" opacity=".55"/>
       </svg>
+    </div>
+    <div class="identity">
       <h1 class="name">حيدر نصيف</h1>
       <span class="role">طالب علم</span>
     </div>
