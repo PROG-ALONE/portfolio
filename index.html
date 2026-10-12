@@ -53,9 +53,11 @@
         -webkit-text-fill-color:transparent;transition:filter .3s,opacity .5s,transform .5s}
   .name:hover{filter:drop-shadow(0 0 18px rgba(70,184,176,.55));animation:shine 1.4s linear infinite}
   .hero:hover .name,.hero:hover .role{opacity:0;transform:translateY(-10px)}
-  .mosque{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84%;
-          color:var(--turq);opacity:0;transition:opacity .6s ease;pointer-events:none;z-index:2}
-  .avatar:hover .mosque{opacity:.1}
+  .mosque{color:var(--turq);opacity:0;transition:opacity .6s ease;pointer-events:none}
+  .avatar .mosque{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:84%;z-index:2}
+  .avatar:hover .mosque{opacity:.2}
+  .identity .mosque{position:absolute;left:50%;top:-2px;transform:translateX(-50%);width:230px;z-index:0}
+  .hero:hover .identity .mosque{opacity:.25}
   @keyframes shine{to{background-position:300% 0}}
   .role{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.5px;
         color:var(--turq);background:rgba(70,184,176,.1);border:1px solid var(--line);
@@ -161,6 +163,24 @@
       </svg>
     </div>
     <div class="identity">
+      <svg class="mosque" viewBox="0 0 240 100" fill="currentColor" aria-hidden="true">
+        <!-- قبة مركزية -->
+        <path d="M120 18c-3 12-14 20-14 34 0 10 6 18 14 18s14-8 14-18c0-14-11-22-14-34z"/>
+        <rect x="117" y="8" width="6" height="12" rx="3"/>
+        <circle cx="120" cy="6" r="4"/>
+        <!-- قباب جانبية -->
+        <path d="M78 40c-2 8-9 13-9 22 0 7 4 12 9 12s9-5 9-12c0-9-7-14-9-22z"/>
+        <path d="M162 40c-2 8-9 13-9 22 0 7 4 12 9 12s9-5 9-12c0-9-7-14-9-22z"/>
+        <!-- مئذنتان -->
+        <rect x="34" y="30" width="9" height="52" rx="2"/>
+        <path d="M38.5 16l4.5 14h-9z"/>
+        <rect x="197" y="30" width="9" height="52" rx="2"/>
+        <path d="M201.5 16l4.5 14h-9z"/>
+        <!-- جسم المسجد -->
+        <path d="M52 82h136v14H52z"/>
+        <!-- مدخل -->
+        <path d="M110 96V78c0-6 4-10 10-10s10 4 10 10v18z" fill="#0c1626" opacity=".55"/>
+      </svg>
       <h1 class="name">حيدر نصيف</h1>
       <span class="role">طالب علم</span>
     </div>
