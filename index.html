@@ -28,16 +28,21 @@
 
 
   .rosette{width:110px;height:92px;margin:0 auto 14px;display:block}
-  .avatar{position:relative;width:132px;height:132px;margin:0 auto 12px}
-  .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;
-              border:2px solid var(--turq);box-shadow:0 12px 34px -14px rgba(70,184,176,.7)}
-  .avatar::before{content:"";position:absolute;inset:-6px;border-radius:50%;padding:2px;
+  .avatar{position:relative;width:168px;height:168px;margin:0 auto 14px}
+  .avatar img{width:100%;height:100%;border-radius:32px;object-fit:cover;display:block;
+              border:2px solid var(--turq);box-shadow:0 14px 40px -16px rgba(70,184,176,.75)}
+  .avatar::before{content:"";position:absolute;inset:-7px;border-radius:38px;padding:2px;
     background:conic-gradient(from 0deg,var(--turq),var(--sand),var(--turq));
     -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
     -webkit-mask-composite:xor;mask-composite:exclude;animation:spin 7s linear infinite;opacity:.8}
   @keyframes spin{to{transform:rotate(1turn)}}
-  .name{font-family:"Aref Ruqaa",serif;font-size:34px;font-weight:700;color:var(--ivory);
-        line-height:1.3;margin:2px 0 2px}
+  .name{font-family:"Amiri","Aref Ruqaa",serif;font-size:38px;font-weight:700;color:var(--ivory);
+        line-height:1.3;margin:2px 0 4px;letter-spacing:1px;
+        display:inline-block;background:linear-gradient(90deg,var(--ivory),var(--turq),var(--sand),var(--ivory));
+        background-size:300% 100%;-webkit-background-clip:text;background-clip:text;
+        -webkit-text-fill-color:transparent;transition:filter .3s}
+  .name:hover{filter:drop-shadow(0 0 18px rgba(70,184,176,.55));animation:shine 1.4s linear infinite}
+  @keyframes shine{to{background-position:300% 0}}
   .role{display:inline-block;font-size:13px;font-weight:600;letter-spacing:.5px;
         color:var(--turq);background:rgba(70,184,176,.1);border:1px solid var(--line);
         padding:4px 16px;border-radius:999px}
@@ -105,7 +110,7 @@
   </details>
 
   <div class="avatar">
-    <img src="hayder-avatar.gif" alt="حيدر نصيف" width="132" height="132"
+    <img src="hayder-avatar.gif" alt="حيدر نصيف" width="168" height="168"
          onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 132 132%22%3E%3Crect width=%22132%22 height=%22132%22 fill=%22%2316294a%22/%3E%3Ctext x=%2266%22 y=%2286%22 font-size=%2256%22 text-anchor=%22middle%22 fill=%22%2346b8b0%22%3E%D8%AD%3C/text%3E%3C/svg%3E';">
   </div>
   <h1 class="name">حيدر نصيف</h1>
